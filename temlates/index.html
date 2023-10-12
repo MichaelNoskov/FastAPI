@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/styles.css">
+    <title>WebRTC stream</title>
+    <style></style>
+</head>
+<body>
+
+<header className="header">
+    <a href="https://www.ocrv.ru/">
+        <img className="logo" src="static/logo.png" alt=""></img>
+    </a>
+</header>
+
+<div class="app">
+    <div id="media">
+<!--        style="display: none"-->
+        <video id="video" autoplay="true" playsinline="true"></video>
+    </div>
+    <div class="option" id="option">
+        <select id="video-resolution">
+            <option value="" selected>Default</option>
+            <option value="320x240">320x240</option>
+            <option value="640x480">640x480</option>
+            <option value="960x540">960x540</option>
+            <option value="1280x720">1280x720</option>
+        </select>
+        <select id="video-transform">
+            <option value="none" selected>No transform</option>
+            <option value="edges">Edge</option>
+            <option value="cartoon">Cartoon</option>
+            <option value="rotate">Face</option>
+        </select>
+        <select id="video-codec">
+            <option value="default" selected>Default</option>
+            <option value="VP8/90000">VP8</option>
+            <option value="H264/90000">H264</option>
+        </select>
+    </div>
+    <button id="start" onclick="start()">Start</button>
+    <button id="stop" style="display: none" onclick="stop()">Stop</button>
+</div>
+
+<h2>Data channel</h2>
+<pre id="data-channel" style="height: 200px;"></pre>
+
+<script src="static/client.js"></script>
+</body>
+</html>
